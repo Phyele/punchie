@@ -32,7 +32,7 @@ function load(): Card[] {
     ]
     const validHoleShapes = ['check', 'circle', 'diamond', 'hexagon', 'seal', 'square', 'triangle', 'star', 'starfour', 'heart']
     return cards.map(c => {
-      const base = { slotColor: '#fcd34d', ...c }
+      const base = { ...c, slotColor: c.slotColor ?? '#fcd34d' }
       return {
         ...base,
         textColor: BG_TO_TEXT[base.color] ?? '#78350f',
