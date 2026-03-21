@@ -229,7 +229,7 @@ export function EditorPage({ initial, onSave, onCancel }: Props) {
           {/* Hole shape */}
           <div className="space-y-2">
             <Label>Stamp icon</Label>
-            <div className="flex gap-2">
+            <div className="flex gap-2 flex-wrap">
               {HOLE_SHAPE_OPTIONS.map(({ value, icon: Icon }) => (
                 <button
                   key={value}

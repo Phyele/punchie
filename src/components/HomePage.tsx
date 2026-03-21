@@ -58,7 +58,7 @@ function CardItem({ card, index, onEdit, onDelete, onPunch }: {
           <AlertDialogContent>
             <AlertDialogHeader>
               <AlertDialogTitle>Say goodbye to "{card.title}"?</AlertDialogTitle>
-              <AlertDialogDescription>
+              <AlertDialogDescription className="text-base text-foreground">
                 All those stamps, gone forever. Are you sure?
               </AlertDialogDescription>
             </AlertDialogHeader>
