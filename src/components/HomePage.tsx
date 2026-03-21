@@ -89,14 +89,14 @@ export function HomePage({ cards, onNew, onEdit, onDelete, onPunch }: Props) {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-white py-8 flex flex-col items-center text-center gap-1">
-        <div className="w-full max-w-[1440px] mx-auto px-20">
+        <div className="w-full max-w-[1440px] mx-auto px-4 md:px-20">
           <h1 className="text-6xl font-bold text-slate-800 tracking-tight">punchie</h1>
           <p className="text-base text-slate-400">every stamp brings you closer</p>
         </div>
       </header>
 
       <main className="py-10">
-        <div className="w-full max-w-[1440px] mx-auto px-20">
+        <div className="w-full max-w-[1440px] mx-auto px-4 md:px-20">
         {cards.length === 0 ? (
           <>
             <div className="flex flex-wrap justify-center gap-6">
@@ -127,7 +127,7 @@ export function HomePage({ cards, onNew, onEdit, onDelete, onPunch }: Props) {
       </main>
       <footer className="py-8 text-center space-y-2">
         <p className="text-slate-400">© {new Date().getFullYear()} punchie — by <a href="https://github.com/phyele" target="_blank" rel="noopener noreferrer" className="underline hover:text-slate-600 transition-colors">Phyele</a></p>
-        <p className="text-slate-400 text-sm max-w-lg mx-auto">Your cards are stored in your browser's localStorage. They will be lost if you clear your browser data, use a different browser, or browse in private mode.</p>
+        <p className="text-slate-400 text-sm max-w-lg mx-auto px-4">Your cards are stored in your browser's localStorage. They will be lost if you clear your browser data, use a different browser, or browse in private mode.</p>
       </footer>
     </div>
   )
