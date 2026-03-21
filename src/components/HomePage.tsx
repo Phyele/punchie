@@ -30,15 +30,18 @@ function CardItem({ card, index, onEdit, onDelete, onPunch }: {
   onPunch: (id: string, slot: number) => void
 }) {
   const [open, setOpen] = useState(false)
+  const [touched, setTouched] = useState(false)
   return (
     <div
       className="group flex flex-col gap-2 transition-transform duration-200 w-full sm:w-[calc(50%-12px)] lg:w-[calc(33.333%-16px)]"
       style={{ transform: `rotate(${cardTilt(card.id, index)}deg)` }}
       onMouseEnter={e => (e.currentTarget.style.transform = 'rotate(0deg) scale(1.02)')}
       onMouseLeave={e => (e.currentTarget.style.transform = `rotate(${cardTilt(card.id, index)}deg)`)}
+      onTouchStart={() => setTouched(true)}
+      onBlur={e => { if (!e.currentTarget.contains(e.relatedTarget)) setTouched(false) }}
     >
       <PunchCard card={card} interactive onPunch={slot => onPunch(card.id, slot)} />
-      <div className="flex gap-2 justify-center opacity-0 group-hover:opacity-100 transition-opacity">
+      <div className={`flex gap-2 justify-center transition-opacity ${touched ? 'opacity-100' : 'opacity-0 group-hover:opacity-100'}`}>
         <button
           onClick={() => onEdit(card)}
           className="text-slate-500 text-sm px-3 py-1 rounded-full border border-slate-200 hover:border-slate-400 hover:text-slate-700 transition-colors"
