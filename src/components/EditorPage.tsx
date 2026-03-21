@@ -145,7 +145,7 @@ export function EditorPage({ initial, onSave, onCancel }: Props) {
   return (
     <div className="min-h-screen bg-white">
       <header className="bg-white py-10">
-        <div className="w-full max-w-[1440px] mx-auto px-20 flex items-center gap-4">
+        <div className="w-full max-w-[1440px] mx-auto px-4 md:px-20 flex items-center gap-4">
           <button
             onClick={onCancel}
             className="text-slate-400 hover:text-slate-600 transition-colors cursor-pointer"
@@ -159,7 +159,7 @@ export function EditorPage({ initial, onSave, onCancel }: Props) {
         </div>
       </header>
 
-      <div className="w-full max-w-[1440px] mx-auto px-20 py-10 grid grid-cols-1 md:grid-cols-2 gap-20">
+      <div className="w-full max-w-[1440px] mx-auto px-4 md:px-20 py-10 grid grid-cols-1 md:grid-cols-2 gap-20">
         {/* Form */}
         <div className="space-y-6">
           <div className="space-y-1.5">
